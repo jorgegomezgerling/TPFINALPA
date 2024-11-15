@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getPopularMovies, searchMovies } from '../services/tmbdService';
-import { Carousel } from 'react-responsive-carousel';
+import { Carousel } from 'react-responsive-carousel'; // importo el carousel
 import { Link } from 'react-router-dom';
-import { Grid, Card, CardMedia, CardContent, Typography, Button, TextField } from '@mui/material';
+import { Grid, Card, CardMedia, CardContent, Typography, Button, TextField } from '@mui/material'; // material UI para cards, buttons.. 
 import './HomePage.css';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Importa los estilos predeterminados del carrusel
 
@@ -19,9 +19,9 @@ const HomePage = () => {
       try {
         let data;
         if (isSearching) {
-          data = await searchMovies(searchQuery, currentPage);
+          data = await searchMovies(searchQuery, currentPage);  // por busqueda
         } else {
-          data = await getPopularMovies(currentPage);
+          data = await getPopularMovies(currentPage); // por popularidad (Definido api)
         }
         setMovies(data.results);
         setTotalPages(data.total_pages);
@@ -32,7 +32,7 @@ const HomePage = () => {
 
     const fetchRecommendedMovies = async () => {
       try {
-        const data = await getPopularMovies(1);
+        const data = await getPopularMovies(1); // seguimos en pag 1
         setRecommendedMovies(data.results.slice(0, 5)); // Tomo las primeras 5 para el carrusel
       } catch (error) {
         console.error('Error al cargar películas recomendadas:', error);
@@ -43,6 +43,8 @@ const HomePage = () => {
     fetchRecommendedMovies();
   }, [currentPage, isSearching]);
 
+
+  // para buscar
   const handleSearch = () => {
     if (searchQuery.trim() !== '') {
       setIsSearching(true);
@@ -54,9 +56,9 @@ const HomePage = () => {
   };
 
   const handleInputChange = (e) => {
-    setSearchQuery(e.target.value);
+    setSearchQuery(e.target.value); // actualizacion de estado con lo buscado
     if (e.target.value === '') {
-      setIsSearching(false);
+      setIsSearching(false); 
       setCurrentPage(1);
     }
   };
@@ -77,7 +79,7 @@ const HomePage = () => {
     <div>
       <h1>+CINE</h1>
 
-      {/* Carrusel de películas recomendadas */}
+      {/* carrusel de películas recomendadas */}
       <div className="carousel-container">
         <Carousel
           showThumbs={false}
