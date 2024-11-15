@@ -41,16 +41,12 @@
   color: #888;
 }
 
-/* App.css */
-
 .container {
-  max-width: 1200px; /* Ajusta este valor según el ancho máximo que prefieras */
-  margin: 0 auto; /* Centra el contenedor en la página */
-  padding: 0 20px; /* Añade espacio de 20px en los laterales */
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 20px; 
+  box-sizing: border-box; 
 }
-
-/* App.css */
 
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/prueba2.jpg');

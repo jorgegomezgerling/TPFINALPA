@@ -1,18 +1,16 @@
-/* MovieDetailsPage.css */
-
 /* Contenedor principal */
 .movie-details {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center; /* Centrar el texto por defecto */
+    text-align: center; 
   }
   
   .movie-details img {
     width: 100%;
-    max-width: 300px; /* Limitar el tamaño de la imagen */
+    max-width: 300px; 
     margin: 20px auto;
-    display: block; /* Centra la imagen */
+    display: block; 
   }
   
   .movie-details h1 {
@@ -49,9 +47,9 @@
   
     .trailers iframe {
       flex: 1 1 100%;
-      max-width: 100%; /* Asegura que los trailers ocupen todo el ancho en móviles */
-      height: auto; /* Ajusta la altura automáticamente */
-      aspect-ratio: 16 / 9; /* Mantén una relación de aspecto adecuada */
+      max-width: 100%;
+      height: auto; 
+      aspect-ratio: 16 / 9;
     }
   }
   

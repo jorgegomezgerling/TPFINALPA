@@ -1,4 +1,3 @@
-// src/services/tmdbService.js
 import axios from 'axios';
 
 const API_BASE_URL = 'https://api.themoviedb.org/3';
@@ -9,7 +8,7 @@ export const getPopularMovies = async (page = 1) => {
       params: {
         api_key: import.meta.env.VITE_TMDB_API_KEY,
         language: 'es-ES',
-        page, // Este parámetro es clave para la paginación
+        page, // parametro por paginacion
       },
     });
     return response.data;

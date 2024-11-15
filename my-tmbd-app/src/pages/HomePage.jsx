@@ -1,4 +1,3 @@
-// src/pages/HomePage.jsx
 import React, { useState, useEffect } from 'react';
 import { getPopularMovies, searchMovies } from '../services/tmbdService';
 import { Carousel } from 'react-responsive-carousel';
@@ -34,7 +33,7 @@ const HomePage = () => {
     const fetchRecommendedMovies = async () => {
       try {
         const data = await getPopularMovies(1);
-        setRecommendedMovies(data.results.slice(0, 5)); // Tomar las primeras 5 para el carrusel
+        setRecommendedMovies(data.results.slice(0, 5)); // Tomo las primeras 5 para el carrusel
       } catch (error) {
         console.error('Error al cargar películas recomendadas:', error);
       }
